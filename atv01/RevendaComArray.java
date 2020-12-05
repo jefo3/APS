@@ -24,7 +24,7 @@ public class RevendaComArray {
                 return;
             }
         }
-        System.out.println("Error: codigo invalido");
+        System.out.println("Error:  codigo invalido");
     }
 
     public void vender(int codigo, int qnt){
