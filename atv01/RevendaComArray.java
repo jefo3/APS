@@ -20,7 +20,7 @@ public class RevendaComArray {
     public void comprar(int codigo, int qnt){
         for(int x = 0; x < this.i; x++ ){
             if(this.produtos[x].getCodigo() == codigo){
-                this.produtos[i].compra(qnt);
+                this.produtos[x].compra(qnt);
                 return;
             }
         }
@@ -30,10 +30,10 @@ public class RevendaComArray {
     public void vender(int codigo, int qnt){
         for(int x = 0; x < this.i; x++ ){
             if(this.produtos[x].getCodigo() == codigo){
-                if(this.produtos[i].getQantEstoque() > 0){
-                    this.produtos[i].venda(qnt);
+                if(this.produtos[x].getQantEstoque() >= qnt){
+                    this.produtos[x].venda(qnt);
                 }else{
-                    System.out.println("Acabou no estoque");
+                    System.out.println("quantidade insuficente no estoque");
                 }
                 return;
             }
