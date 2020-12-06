@@ -18,8 +18,8 @@ public class RevendaComArray {
     }
 
     public void comprar(int codigo, int qnt){
-        for(Produto p: produtos){
-            if(p.getCodigo() == codigo){
+        for(int x = 0; x < this.i; x++ ){
+            if(this.produtos[x].getCodigo() == codigo){
                 Produto.compra(qnt);
                 return;
             }
@@ -28,8 +28,8 @@ public class RevendaComArray {
     }
 
     public void vender(int codigo, int qnt){
-        for(Produto p: produtos){
-            if(p.getCodigo() == codigo){
+        for(int x = 0; x < this.i; x++ ){
+            if(this.produtos[x].getCodigo() == codigo){
                 Produto.venda(qnt);
                 return;
             }
@@ -39,9 +39,9 @@ public class RevendaComArray {
 
 
     public void consultaPrecoVenda(int codigo){
-        for(Produto p: produtos){
-            if(p.getCodigo() == codigo){
-                System.out.println("Preço: "+ p.getValor());
+        for(int x = 0; x < this.i; x++ ){
+            if(this.produtos[x].getCodigo() == codigo){
+                System.out.println("Preço: "+ this.produtos[x].calculaPrecoVenda());
                 return;
             }
         }
@@ -49,11 +49,11 @@ public class RevendaComArray {
     }
 
     public void listaPrecos(){
-        for(Produto p: produtos){
+        for(int x = 0; x < this.i; x++ ){
             System.out.println("## INFOS DO PRODUTO ##");
-            System.out.println("Codigo: "+p.getCodigo());
-            System.out.println("Descrição: "+ p.getDescricao());
-            System.out.println("Preço: "+ p.getValor());
+            System.out.println("Codigo: "+this.produtos[x].getCodigo());
+            System.out.println("Descrição: "+ this.produtos[x].getDescricao());
+            System.out.println("Preço: "+ this.produtos[x].calculaPrecoVenda());
         }
     }
 

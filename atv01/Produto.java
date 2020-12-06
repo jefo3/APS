@@ -32,7 +32,7 @@ public class Produto{
         this.valor = valor;
         this.custo = custo;
         this.margemLucro = margemLucro;
-        qantEstoque = qntEstoque;
+        this.compra(qntEstoque);
     }
 
     public static void compra(int quant){
