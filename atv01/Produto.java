@@ -7,7 +7,7 @@ public class Produto{
     private double valor;
     private double custo;
     private double margemLucro;
-    public static int qantEstoque = 0;
+    public int qantEstoque = 0;
 
     public Produto(){
 
@@ -35,11 +35,11 @@ public class Produto{
         this.compra(qntEstoque);
     }
 
-    public static void compra(int quant){
+    public void compra(int quant){
         qantEstoque += quant;
     }
 
-    public static void venda(int quant){
+    public void venda(int quant){
         qantEstoque -= quant;
     }
 
@@ -85,6 +85,14 @@ public class Produto{
 
     public void setMargemLucro(double margemLucro) {
         this.margemLucro = margemLucro;
+    }
+
+    public int getQantEstoque(){
+        return this.qantEstoque;
+    }
+
+    public void setQantEstoque(int qantEstoque) {
+        this.qantEstoque = qantEstoque;
     }
 
 

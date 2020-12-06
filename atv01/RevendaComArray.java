@@ -20,7 +20,7 @@ public class RevendaComArray {
     public void comprar(int codigo, int qnt){
         for(int x = 0; x < this.i; x++ ){
             if(this.produtos[x].getCodigo() == codigo){
-                Produto.compra(qnt);
+                this.produtos[i].compra(qnt);
                 return;
             }
         }
@@ -30,7 +30,11 @@ public class RevendaComArray {
     public void vender(int codigo, int qnt){
         for(int x = 0; x < this.i; x++ ){
             if(this.produtos[x].getCodigo() == codigo){
-                Produto.venda(qnt);
+                if(this.produtos[i].getQantEstoque() > 0){
+                    this.produtos[i].venda(qnt);
+                }else{
+                    System.out.println("Acabou no estoque");
+                }
                 return;
             }
         }
@@ -56,5 +60,65 @@ public class RevendaComArray {
             System.out.println("Preço: "+ this.produtos[x].calculaPrecoVenda());
         }
     }
+    
+    public void editarPreco(int codigo, double valor){
+        for(int x = 0; x < this.i; x++ ){
+            if(this.produtos[x].getCodigo() == codigo){
+                this.produtos[x].setValor(valor);
+                return;
+            }
+        }
+        System.out.println("Error: codigo invalido");
+    }
 
+    public void editarCusto(int codigo, double custo){
+        for(int x = 0; x < this.i; x++ ){
+            if(this.produtos[x].getCodigo() == codigo){
+                this.produtos[x].setCusto(custo);
+                return;
+            }
+        }
+        System.out.println("Error: codigo invalido");
+    }
+
+    public void editarMargenLucro(int codigo, double margemLucro){
+        for(int x = 0; x < this.i; x++ ){
+            if(this.produtos[x].getCodigo() == codigo){
+                this.produtos[x].setMargemLucro(margemLucro);
+                return;
+            }
+        }
+        System.out.println("Error: codigo invalido");
+    }
+
+    public void mostrarPreco(int codigo){
+        for(int x = 0; x < this.i; x++ ){
+            if(this.produtos[x].getCodigo() == codigo){
+                System.out.println("Valor de compra: " + this.produtos[x].getValor());
+                return;
+            }
+        }
+        System.out.println("Error: codigo invalido");
+    }
+
+    public void mostrarCusto(int codigo){
+        for(int x = 0; x < this.i; x++ ){
+            if(this.produtos[x].getCodigo() == codigo){
+                System.out.println("custo: " + this.produtos[x].getCusto());
+                return;
+            }
+        }
+        System.out.println("Error: codigo invalido");
+    }
+
+    public void mostrarMargemLucro(int codigo){
+        for(int x = 0; x < this.i; x++ ){
+            if(this.produtos[x].getCodigo() == codigo){
+                System.out.println("Valor de compra: " + this.produtos[x].getMargemLucro());
+                this.produtos[x].getValor();
+                return;
+            }
+        }
+        System.out.println("Error: codigo invalido");
+    }
 }
